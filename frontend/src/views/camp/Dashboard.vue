@@ -2,8 +2,9 @@
   <content-card :title="$tc('views.camp.dashboard.activities')" toolbar>
     <template #title-actions>
       <v-spacer />
-      <v-btn v-if="today !== null" :icon="true" @click="scrollToToday">
-        <v-icon>mdi-calendar-today</v-icon>
+      <v-btn v-if="today !== null" text @click="scrollToToday">
+        <v-icon left>mdi-calendar-today</v-icon>
+        {{ $tc('views.camp.dashboard.today') }}
       </v-btn>
     </template>
     <div class="d-flow-root">
@@ -61,10 +62,11 @@
           <template v-if="!periods[uri].days()._meta.loading">
             <tbody
               v-for="(dayScheduleEntries, dayUri) in periodDays"
+              :id="days[dayUri].id"
               :key="dayUri"
               :aria-labelledby="dayUri + 'th'"
             >
-              <tr :ref="days[dayUri].id" class="day-header__row">
+              <tr class="day-header__row">
                 <th :id="dayUri + 'th'" colspan="5" scope="colgroup" class="day-header">
                   <div class="day-header__inner">
                     {{ dateLong(days[dayUri].start) }}
@@ -290,9 +292,23 @@ export default {
       this.$router.replace({ query }).catch((err) => console.warn(err))
     },
     scrollToToday() {
-      const refs = this.$refs[this.today.id]
-      if (refs.length > 0) {
-        refs[0].scrollIntoView({ behavior: 'smooth' })
+      const element = document.getElementById(this.today.id)
+      if (element) {
+        const elementPosition = element.getBoundingClientRect().top
+
+        let offsetPosition = elementPosition
+        if (this.$vuetify.breakpoint.mdAndUp) {
+          offsetPosition = offsetPosition - 50
+        } else if (this.$vuetify.breakpoint.smAndUp) {
+          offsetPosition = offsetPosition + 14
+        } else {
+          offsetPosition = offsetPosition - 34
+        }
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        })
       }
     },
   },
