@@ -64,7 +64,7 @@ jobs:
       - run: docker compose -f docker-compose.yml run --rm api migrate-database
 
       # start necessary containers
-      - run: docker compose -f docker-compose.yml up -d api frontend pdf print browserless database docker-host http-cache mail reverse-proxy
+      - run: docker compose -f docker-compose.yml up -d api frontend pdf print browserless database docker-host http-cache mail pg-admin reverse-proxy
 
       # pull cypress while container are starting up
       - run: docker compose pull e2e
