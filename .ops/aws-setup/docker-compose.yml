@@ -13,7 +13,7 @@ services:
       - AWS_DEFAULT_REGION=eu-west-3
 
   aws-cli:
-    image: amazon/aws-cli:2.18.17
+    image: amazon/aws-cli:2.18.18
     container_name: 'ecamp3-aws-cli'
     volumes:
       - ./.aws:/root/.aws:delegated
