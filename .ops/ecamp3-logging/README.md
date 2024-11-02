@@ -35,7 +35,5 @@ sh files/kibana/restore-kibana-objects.sh
 
 To diff the deployment
 ```shell
-helm template \
-    --namespace ecamp3-logging --no-hooks --skip-tests \
-    ecamp3-logging . --values=values.yaml --values=values-prod.yaml | kubectl diff --namespace ecamp3-logging -f - | batcat -l diff -
+./deploy.sh diff
 ```

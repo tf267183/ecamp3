@@ -1,7 +1,0 @@
-elasticsearch:
-  elasticNode:
-    resources:
-      requests:
-        memory: 2000Mi
-      limits:
-        memory: 2000Mi

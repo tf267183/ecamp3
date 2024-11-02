@@ -38,9 +38,9 @@ elasticsearch:
   elasticNode:
     resources:
       requests:
-        memory: 1000Mi
+        memory: ${ELASTIC_NODE_REQUESTS_MEMORY}
       limits:
-        memory: 1000Mi
+        memory: ${ELASTIC_NODE_LIMITS_MEMORY}
   persistence:
     storageClassName: do-block-storage
     resources:
