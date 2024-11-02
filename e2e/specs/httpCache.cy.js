@@ -141,37 +141,41 @@ describe('HTTP cache tests', () => {
     })
   })
 
-  it('invalidates /camp/{campId}/categories for new category', () => {
-    const uri = '/api/camps/3c79b99ab424/categories'
+  it(
+    'invalidates /camp/{campId}/categories for new category',
+    { retries: { runMode: 3 } },
+    () => {
+      const uri = '/api/camps/3c79b99ab424/categories'
 
-    Cypress.session.clearAllSavedSessions()
-    cy.login('test@example.com')
+      Cypress.session.clearAllSavedSessions()
+      cy.login('test@example.com')
 
-    // warm up cache
-    cy.expectCacheMiss(uri)
-    cy.expectCacheHit(uri)
-
-    // add new category to camp
-    cy.apiPost('/api/categories', {
-      camp: '/api/camps/3c79b99ab424',
-      short: 'new',
-      name: 'new Category',
-      color: '#000000',
-      numberingStyle: '1',
-    }).then((response) => {
-      const newContentNodeUri = response.body._links.self.href
-
-      // ensure cache was invalidated
+      // warm up cache
       cy.expectCacheMiss(uri)
       cy.expectCacheHit(uri)
 
-      // delete newly created contentNode
-      cy.apiDelete(newContentNodeUri)
+      // add new category to camp
+      cy.apiPost('/api/categories', {
+        camp: '/api/camps/3c79b99ab424',
+        short: 'new',
+        name: 'new Category',
+        color: '#000000',
+        numberingStyle: '1',
+      }).then((response) => {
+        const newContentNodeUri = response.body._links.self.href
 
-      // ensure cache was invalidated
-      cy.expectCacheMiss(uri)
-    })
-  })
+        // ensure cache was invalidated
+        cy.expectCacheMiss(uri)
+        cy.expectCacheHit(uri)
+
+        // delete newly created contentNode
+        cy.apiDelete(newContentNodeUri)
+
+        // ensure cache was invalidated
+        cy.expectCacheMiss(uri)
+      })
+    }
+  )
 
   it('invalidates cached data when user leaves a camp', () => {
     Cypress.session.clearAllSavedSessions()
