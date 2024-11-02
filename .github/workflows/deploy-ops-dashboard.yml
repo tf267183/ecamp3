@@ -1,0 +1,64 @@
+name: Deploy ops-dashboard
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Choose environment'
+        type: environment
+        required: true
+
+jobs:
+  deploy-ops-dashboard:
+    name: "Deploy ops-dashboard"
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
+    steps:
+      - name: Validate environment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            if (!"${{ github.event.inputs.environment }}".startsWith("ops-dashboard")) {
+                throw new Error("Environment must start with 'ops-dashboard'");
+            }
+
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Dump secrets to .env
+        run: |
+          echo '${{ toJSON(secrets) }}' | jq -r 'keys[] as $k | select(.[$k] |contains("\n") | not) | "\($k)=\"\(.[$k])\""' >> .env
+        working-directory: .ops/ops-dashboard
+
+      - name: Dump variables to .env
+        run: |  
+          echo '${{ toJSON(vars) }}' | jq -r 'keys[] as $k | select(.[$k] |contains("\n") | not) | "\($k)=\"\(.[$k])\""' >> .env
+        working-directory: .ops/ops-dashboard
+
+      - name: Show .env for debugging
+        run: echo "$(cat .env | sort)"
+        working-directory: .ops/ops-dashboard
+
+      - name: Setup helm
+        run: |
+          mkdir ~/.kube && echo '${{ secrets.KUBECONFIG }}' > ~/.kube/config && chmod go-r ~/.kube/config
+
+      - name: Add helm repositories
+        run: |
+          helm repo add oauth2-proxy https://oauth2-proxy.github.io/manifests
+          helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
+          helm repo update
+
+      - name: Diff deployment
+        run: |
+          ./deploy.sh diff || true
+        working-directory: .ops/ops-dashboard
+        
+      - name: Show values.out.yaml
+        run: cat values.out.yaml
+        working-directory: .ops/ops-dashboard
+
+      - name: Deploy
+        run: |
+          ./deploy.sh deploy
+        working-directory: .ops/ops-dashboard

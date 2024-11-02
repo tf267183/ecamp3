@@ -2,24 +2,57 @@ grafana-proxy:
   ingress:
     enabled: true
     className: nginx
-  extraArgs: 
+    hosts:
+      - ${GRAFANA_PROXY_HOST}
+  extraArgs:
+    whitelist-domain: ${GRAFANA_HOST}
     provider: github
     github-org: ecamp
     upstream: http://kube-prometheus-stack-grafana.kube-prometheus-stack.svc.cluster.local:80
-kubernetes-dashboard-proxy: 
+  config:
+    # OAuth client ID
+    clientID: ${GRAFANA_PROXY_OAUTH_CLIENT_ID}
+    # OAuth client secret
+    clientSecret: ${GRAFANA_PROXY_OAUTH_CLIENT_SECRET}
+    # Create a new secret with the following command
+    # openssl rand -base64 32 | head -c 32 | base64
+    cookieSecret: ${COOKIE_SECRET}
+kubernetes-dashboard-proxy:
   ingress:
     enabled: true
     className: nginx
+    hosts:
+      - ${KUBERNETES_DASHBOARD_PROXY_HOST}
   extraArgs:
+    whitelist-domain: ${KUBERNETES_DASHBOARD_PROXY_HOST}
     provider: github
     github-org: ecamp
     upstream: https://ops-dashboard-kong-proxy.ops-dashboard.svc.cluster.local
     ssl-upstream-insecure-skip-verify: true
+  config:
+    # OAuth client ID
+    clientID: ${KUBERNETES_DASHBOARD_PROXY_OAUTH_CLIENT_ID}
+    # OAuth client secret
+    clientSecret: ${KUBERNETES_DASHBOARD_PROXY_OAUTH_CLIENT_SECRET}
+    # Create a new secret with the following command
+    # openssl rand -base64 32 | head -c 32 | base64
+    cookieSecret: ${COOKIE_SECRET}
 logging-proxy:
   ingress:
     enabled: true
     className: nginx
+    hosts:
+      - ${LOGGING_PROXY_HOST}
   extraArgs:
+    whitelist-domain: ${LOGGING_PROXY_HOST}
     provider: github
     github-org: ecamp
     upstream: http://kibana.ecamp3-logging.svc.cluster.local:5601
+  config:
+    # OAuth client ID
+    clientID: ${LOGGING_PROXY_OAUTH_CLIENT_ID}
+    # OAuth client secret
+    clientSecret: ${LOGGING_PROXY_OAUTH_CLIENT_SECRET}
+    # Create a new secret with the following command
+    # openssl rand -base64 32 | head -c 32 | base64
+    cookieSecret: ${COOKIE_SECRET}

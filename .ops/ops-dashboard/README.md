@@ -22,23 +22,26 @@ helm repo update
 
 ## Deployment
 
-First, make sure you don't overwrite the configuration currently applied:
+First, check what is currently applied:
 
 ```shell
 helm -n ops-dashboard get values ops-dashboard
 ```
 
-Fill in the values for values.access.yaml according to demo.values.access.yaml
+Fill in the values for .env according to .env.example
 
 ```shell
-cp demo.values.access.yaml values.access.yaml 
+cp .env-example .env
 ```
 
-To diff the deployment
+you may diff the current deployment with the one you want to do now
+
 ```shell
-helm template \
-    --namespace ops-dashboard --no-hooks --skip-tests \
-    ops-dashboard . \
-    --values values.yaml \
-    --values values.access.yaml | kubectl diff --namespace ops-dashboard -f - | batcat -l diff -
+./deploy.sh diff
+````
+
+Deploy
+
+```shell
+./deploy.sh deploy
 ```
