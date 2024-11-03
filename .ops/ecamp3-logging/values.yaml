@@ -19,6 +19,9 @@ fluent-operator:
     watchedNamespaces:
       - default
       - ingress-nginx
+    envVars: 
+      - name: TRIGGER_FLUENTD_RECREATE
+        value: ${RANDOM_STRING}
     enable: true
 
 fluentd:
