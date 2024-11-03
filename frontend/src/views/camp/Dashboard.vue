@@ -135,7 +135,7 @@
 </template>
 
 <script>
-import { campRoute, periodRoute } from '@/router.js'
+import { periodRoute } from '@/router.js'
 import ContentCard from '@/components/layout/ContentCard.vue'
 import ActivityRow from '@/components/dashboard/ActivityRow.vue'
 import { keyBy, groupBy, mapValues } from 'lodash'
@@ -284,7 +284,6 @@ export default {
     })
   },
   methods: {
-    campRoute,
     periodRoute,
     persistRouterState() {
       const query = transformValuesToHalId(this.filter)
@@ -294,19 +293,16 @@ export default {
     scrollToToday() {
       const element = document.getElementById(this.today.id)
       if (element) {
-        const elementPosition = element.getBoundingClientRect().top
-
-        let offsetPosition = elementPosition
+        let elementPosition = element.getBoundingClientRect().top
         if (this.$vuetify.breakpoint.mdAndUp) {
-          offsetPosition = offsetPosition - 50
+          elementPosition = elementPosition - 50
         } else if (this.$vuetify.breakpoint.smAndUp) {
-          offsetPosition = offsetPosition + 14
+          elementPosition = elementPosition + 14
         } else {
-          offsetPosition = offsetPosition - 34
+          elementPosition = elementPosition - 34
         }
-
         window.scrollTo({
-          top: offsetPosition,
+          top: elementPosition,
           behavior: 'smooth',
         })
       }
