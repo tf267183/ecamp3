@@ -293,7 +293,8 @@ export default {
     scrollToToday() {
       const element = document.getElementById(this.today.id)
       if (element) {
-        let elementPosition = element.getBoundingClientRect().top
+        let elementPosition =
+          element.getBoundingClientRect().top + document.documentElement.scrollTop
         if (this.$vuetify.breakpoint.mdAndUp) {
           elementPosition = elementPosition - 50
         } else if (this.$vuetify.breakpoint.smAndUp) {
