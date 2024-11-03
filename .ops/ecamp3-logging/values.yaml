@@ -1,5 +1,8 @@
 fluent-operator:
   containerRuntime: containerd
+  operator: 
+    annotations: 
+      trigger-recreate: ${RANDOM_STRING}
   fluentbit:
     enable: true
     input:
