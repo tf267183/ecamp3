@@ -68,6 +68,11 @@ export default {
     depth: { type: Number, required: true },
     allChecklistNodes: { type: Array, required: true },
   },
+  data() {
+    return {
+      checklistNodes: [],
+    }
+  },
   computed: {
     activities() {
       const camp = this.checklistItem.checklist().camp()
