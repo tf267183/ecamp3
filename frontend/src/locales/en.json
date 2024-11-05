@@ -677,6 +677,7 @@
           "title": "Title"
         },
         "noEntries": "No activities found. Try clearing the selection filters and/or reloading the page.",
+        "today": "Today",
         "welcome": "Welcome to your new camp. There aren't any activities defined yet."
       },
       "invitation": {

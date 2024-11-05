@@ -1,5 +1,12 @@
 <template>
   <content-card :title="$tc('views.camp.dashboard.activities')" toolbar>
+    <template #title-actions>
+      <v-spacer />
+      <v-btn v-if="today !== null" text @click="scrollToToday">
+        <v-icon left>mdi-calendar-today</v-icon>
+        {{ $tc('views.camp.dashboard.today') }}
+      </v-btn>
+    </template>
     <div class="d-flow-root">
       <ScheduleEntryFilters
         v-if="loading"
@@ -55,6 +62,7 @@
           <template v-if="!periods[uri].days()._meta.loading">
             <tbody
               v-for="(dayScheduleEntries, dayUri) in periodDays"
+              :id="days[dayUri].id"
               :key="dayUri"
               :aria-labelledby="dayUri + 'th'"
             >
@@ -140,6 +148,7 @@ import {
 } from '@/helpers/querySyncHelper'
 import AvatarRow from '@/components/generic/AvatarRow.vue'
 import ScheduleEntryFilters from '@/components/program/ScheduleEntryFilters.vue'
+import dayjs from '@/common/helpers/dayjs.js'
 
 export default {
   name: 'Dashboard',
@@ -187,6 +196,13 @@ export default {
         Object.values(this.periods).flatMap((period) => period.days().items),
         '_meta.self'
       )
+    },
+    today() {
+      const now = dayjs.utc()
+      const today = Object.values(this.days).filter(
+        (d) => dayjs.utc(d.start) <= now && dayjs.utc(d.end) >= now
+      )
+      return today.length > 0 ? today[0] : null
     },
     dayResponsibleCollaborators() {
       return mapValues(this.days, (day) =>
@@ -273,6 +289,24 @@ export default {
       const query = transformValuesToHalId(this.filter)
       if (filterAndQueryAreEqual(query, this.$route.query)) return
       this.$router.replace({ query }).catch((err) => console.warn(err))
+    },
+    scrollToToday() {
+      const element = document.getElementById(this.today.id)
+      if (element) {
+        let elementPosition =
+          element.getBoundingClientRect().top + document.documentElement.scrollTop
+        if (this.$vuetify.breakpoint.mdAndUp) {
+          elementPosition = elementPosition - 50
+        } else if (this.$vuetify.breakpoint.smAndUp) {
+          elementPosition = elementPosition + 14
+        } else {
+          elementPosition = elementPosition - 34
+        }
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth',
+        })
+      }
     },
   },
 }

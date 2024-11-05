@@ -621,6 +621,7 @@
           "title": "Titre"
         },
         "noEntries": "Aucune activité trouvée. Essaie d'effacer les filtres de sélection et/ou de recharger la page.",
+        "today": "Aujourd'hui",
         "welcome": "Bienvenue dans ton nouveau camp. Il n'y a pas encore d'activités définies."
       },
       "invitation": {
