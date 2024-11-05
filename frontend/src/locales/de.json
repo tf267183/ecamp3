@@ -159,8 +159,7 @@
         }
       },
       "campCreateStep1": {
-        "submitTooltip": "Bitte fülle alle Pflichtfelder aus.",
-        "titlePlaceholder": "Klassenlager 2024 5. Klasse"
+        "submitTooltip": "Bitte fülle alle Pflichtfelder aus."
       },
       "campCreateStep2": {
         "category": "Block-Kategorien",
@@ -186,9 +185,9 @@
         "layout": "Layout",
         "noTemplate": "Keine Vorlage"
       },
-      "copyCategoryInfoDialog": {
+      "copyActivityInfoDialog": {
         "allow": "Jetzt erlauben",
-        "denied": "Du hast das Lesen von der Zwischenablage untersagt. Du kannst daher kopierte Kategorien nicht einfügen.",
+        "denied": "Du hast den Zugriff auf die Zwischenablage verweigert. Kopierte Kategorien können daher nicht eingefügt werden.",
         "description": "Damit du eine kopierte Kategorie einfügen kannst, musst du eCamp erlauben deine Zwischenablage zu lesen.",
         "granted": "Du kannst nun kopierte Kategorien einfügen.",
         "title": "Kategorie kopieren & einfügen"
@@ -199,12 +198,12 @@
         "title": "Checkliste erstellen"
       },
       "checklistItemCreate": {
-        "add": "Checklisteneintrag erstellen",
-        "title": "Checklisteneintrag hinzufügen"
+        "add": "Checklisten-Eintrag erstellen",
+        "title": "Checklisten-Eintrag hinzufügen"
       },
       "checklistItemEdit": {
         "delete": "Möchtest du diesen Eintrag wirklich löschen?",
-        "title": "Checklisteneintrag bearbeiten"
+        "title": "Checklisten-Eintrag bearbeiten"
       },
       "checklistDetail": {
         "deleteWarning": "Möchtest du diese Checkliste wirklich löschen? Der komplette Inhalt dieser Checkliste wird gelöscht.",
@@ -308,6 +307,7 @@
     "navigation": {
       "userMeta": {
         "invitations": "Einladungen",
+        "admin": "Admin",
         "logOut": "Ausloggen",
         "myCamps": "Meine Lager",
         "profile": "Profil"
@@ -330,8 +330,7 @@
           "activity": "Aktivität"
         },
         "picassoConfig": {
-          "orientation": "Seitenlayout",
-          "periods": "Lagerabschnitt(e)"
+          "orientation": "Seitenlayout"
         },
         "programConfig": {
           "dayOverview": "Tagesübersicht"
@@ -370,10 +369,10 @@
           "Cover": "Titelseite",
           "Picasso": "Grobprogramm",
           "Program": "Detailprogramm",
-          "SafetyConsiderations": "Sicherheits­überlegungen",
-          "Story": "Roter Faden",
+          "SafetyConsiderations": "Sicherheitsüberlegungen",
+          "Story": "Geschichte",
           "Toc": "Inhaltsverzeichnis",
-          "ActivityList": "Aktivitätsübersicht (Kurse)"
+          "ActivityList": "Aktivitätenliste (Kurse)"
         }
       },
       "printNuxt": {
@@ -669,7 +668,7 @@
       },
       "checklistOverview": {
         "checklistLists": {
-          "title": "Checklist-Übersicht"
+          "title": "Checklisten-Übersicht"
         }
       },
       "dashboard": {
@@ -715,8 +714,8 @@
         "desktop": {
           "navTopbar": {
             "admin": "Admin",
+            "checklist": "Checkliste",
             "campIsLoading": "Lager wird geladen",
-            "checklist": "Checklist",
             "material": "Material",
             "print": "Drucken",
             "program": "Programm",
@@ -735,7 +734,7 @@
             "itemActivity": "Aktivitäten",
             "itemActivitySubtitle": "Kategorie, Vorlagen & Status",
             "itemCamps": "Meine Lager",
-            "itemChecklists": "Checklist Übersicht",
+            "itemChecklists": "Checklisten-Übersicht",
             "itemClose": "Menü schliessen",
             "itemCollaborators": "Team",
             "itemInfos": "Lagerinfos",
