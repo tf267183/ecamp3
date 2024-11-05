@@ -83,7 +83,6 @@ import ContentNodeCard from '@/components/activity/content/layout/ContentNodeCar
 import { contentNodeMixin } from '@/mixins/contentNodeMixin.js'
 import ApiSortable from '@/components/form/api/ApiSortable.vue'
 
-import { v4 as uuidv4 } from 'uuid'
 import { errorToMultiLineToast } from '@/components/toast/toasts'
 import StoryboardSortable from '@/components/activity/content/storyboard/StoryboardSortable.vue'
 
@@ -134,7 +133,7 @@ export default {
     async addSection() {
       this.isAdding = true
 
-      const sectionId = uuidv4()
+      const sectionId = self.crypto.randomUUID()
       try {
         // TODO: consider adding item to ApiSortable eagerly (should be easy, now that uuid is generated locally)
         await this.contentNode.$patch({
