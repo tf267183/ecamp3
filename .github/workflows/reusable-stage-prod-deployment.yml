@@ -109,7 +109,8 @@ jobs:
             --set print.resources.requests.cpu=${{ vars.PRINT_CPU || '300m' }} \
             --set print.resources.requests.memory=${{ vars.PRINT_MEMORY || '150Mi' }} \
             --set autoscaling.enabled=true \
-            --set autoscaling.targetCPUUtilizationPercentage=90
+            --set autoscaling.targetCPUUtilizationPercentage=90 \
+            --set featureToggle.checklist=${{ vars.FEATURE_CHECKLIST || 'false' }}
 
       - name: Finish the GitHub deployment
         uses: bobheadxi/deployments@v1.5.0
