@@ -205,6 +205,10 @@
         "delete": "Do you really want to remove this item?",
         "title": "Edit checklist entry"
       },
+      "checklistDetail": {
+        "deleteWarning": "Do you really want to remove this checklist? All content of the checklist will be deleted.",
+        "deleteError": "Checklist couldn't be deleted. Ensure checklist is not used within activities before trying to delete it."
+      },
       "sortableChecklist": {
         "add": "Add to \"{parent}\""
       }
