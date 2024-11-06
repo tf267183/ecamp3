@@ -33,7 +33,7 @@
         "symfony/expression-language": "7.1.6",
         "symfony/flex": "2.4.7",
         "symfony/framework-bundle": "7.1.5",
-        "symfony/http-client": "7.1.6",
+        "symfony/http-client": "7.1.7",
         "symfony/intl": "7.1.6",
         "symfony/mailer": "7.1.6",
         "symfony/monolog-bundle": "3.10.0",
