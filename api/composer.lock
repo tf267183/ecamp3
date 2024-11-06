@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "63acc8d6f9303eb140551a67cce41a10",
+    "content-hash": "a11ebe79225e62f42db85a94c049b989",
     "packages": [
         {
             "name": "api-platform/core",
@@ -2125,21 +2125,22 @@
         },
         {
             "name": "friendsofsymfony/http-cache-bundle",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSHttpCacheBundle.git",
-                "reference": "4a7e7fe7ff2ddb5a5d4e69c9b59bff52ab08bc16"
+                "reference": "c87889768daad3a306058f6d2fe46c158d6f693c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCacheBundle/zipball/4a7e7fe7ff2ddb5a5d4e69c9b59bff52ab08bc16",
-                "reference": "4a7e7fe7ff2ddb5a5d4e69c9b59bff52ab08bc16",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSHttpCacheBundle/zipball/c87889768daad3a306058f6d2fe46c158d6f693c",
+                "reference": "c87889768daad3a306058f6d2fe46c158d6f693c",
                 "shasum": ""
             },
             "require": {
                 "friendsofsymfony/http-cache": "^2.15 || ^3.0",
                 "php": "^8.1",
+                "symfony/dependency-injection": "^6.4 || ^7.0",
                 "symfony/expression-language": "^6.4 || ^7.0",
                 "symfony/framework-bundle": "^6.4 || ^7.0",
                 "symfony/http-foundation": "^6.4 || ^7.0",
@@ -2219,9 +2220,9 @@
             ],
             "support": {
                 "issues": "https://github.com/FriendsOfSymfony/FOSHttpCacheBundle/issues",
-                "source": "https://github.com/FriendsOfSymfony/FOSHttpCacheBundle/tree/3.0.1"
+                "source": "https://github.com/FriendsOfSymfony/FOSHttpCacheBundle/tree/3.0.2"
             },
-            "time": "2024-05-07T09:23:49+00:00"
+            "time": "2024-11-06T08:05:27+00:00"
         },
         {
             "name": "gedmo/doctrine-extensions",
