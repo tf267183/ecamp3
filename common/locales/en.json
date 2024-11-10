@@ -173,18 +173,18 @@
       },
       "name": "Activity categories",
       "numberingStyles": {
+        "-": "no numbering",
         "1": "1, 2, 3 - numbers",
         "A": "A, B, C - uppercase letters",
         "I": "I, II, III - uppercase roman numerals",
         "a": "a, b, c - lowercase letters",
-        "i": "i, ii, iii - lowercase roman numerals",
-        "-": "no numbering"
+        "i": "i, ii, iii - lowercase roman numerals"
       }
     },
     "checklist": {
       "fields": {
-        "name": "Name",
-        "copyChecklistSource": "Prototype"
+        "copyChecklistSource": "Prototype",
+        "name": "Name"
       },
       "name": "Checklist | Checklists"
     },
