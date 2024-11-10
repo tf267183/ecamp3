@@ -131,8 +131,8 @@
         "title": "Materialliste erstellen"
       },
       "dialogMaterialListEdit": {
-        "title": "Materialliste bearbeiten",
-        "deleteError": "Materialliste konnte nicht gelöscht werden. Überprüfe vor dem Löschen, dass die Liste leer ist."
+        "deleteError": "Materialliste konnte nicht gelöscht werden. Überprüfe vor dem Löschen, dass die Liste leer ist.",
+        "title": "Materialliste bearbeiten"
       },
       "dialogPeriodCreate": {
         "title": "Lagerabschnitt erstellen"
@@ -159,7 +159,8 @@
         }
       },
       "campCreateStep1": {
-        "submitTooltip": "Bitte fülle alle Pflichtfelder aus."
+        "submitTooltip": "Bitte fülle alle Pflichtfelder aus.",
+        "titlePlaceholder": "Klassenlager 2024 5. Klasse"
       },
       "campCreateStep2": {
         "category": "Block-Kategorien",
@@ -185,7 +186,7 @@
         "layout": "Layout",
         "noTemplate": "Keine Vorlage"
       },
-      "copyActivityInfoDialog": {
+      "copyCategoryInfoDialog": {
         "allow": "Jetzt erlauben",
         "denied": "Du hast den Zugriff auf die Zwischenablage verweigert. Kopierte Kategorien können daher nicht eingefügt werden.",
         "description": "Damit du eine kopierte Kategorie einfügen kannst, musst du eCamp erlauben deine Zwischenablage zu lesen.",
@@ -197,6 +198,10 @@
       "checklistCreate": {
         "title": "Checkliste erstellen"
       },
+      "checklistDetail": {
+        "deleteError": "Checkliste konnte nicht gelöscht werden. Überprüfe vor dem Löschen, dass die Checkliste nicht mehr in Aktivitäten verwendet wird.",
+        "deleteWarning": "Möchtest du diese Checkliste wirklich löschen? Der komplette Inhalt dieser Checkliste wird gelöscht."
+      },
       "checklistItemCreate": {
         "add": "Checklisten-Eintrag erstellen",
         "title": "Checklisten-Eintrag hinzufügen"
@@ -204,10 +209,6 @@
       "checklistItemEdit": {
         "delete": "Möchtest du diesen Eintrag wirklich löschen?",
         "title": "Checklisten-Eintrag bearbeiten"
-      },
-      "checklistDetail": {
-        "deleteWarning": "Möchtest du diese Checkliste wirklich löschen? Der komplette Inhalt dieser Checkliste wird gelöscht.",
-        "deleteError": "Checkliste konnte nicht gelöscht werden. Überprüfe vor dem Löschen, dass die Checkliste nicht mehr in Aktivitäten verwendet wird."
       },
       "sortableChecklist": {
         "add": "Zu \"{parent}\" hinzufügen"
@@ -306,8 +307,8 @@
     },
     "navigation": {
       "userMeta": {
-        "invitations": "Einladungen",
         "admin": "Admin",
+        "invitations": "Einladungen",
         "logOut": "Ausloggen",
         "myCamps": "Meine Lager",
         "profile": "Profil"
@@ -330,7 +331,8 @@
           "activity": "Aktivität"
         },
         "picassoConfig": {
-          "orientation": "Seitenlayout"
+          "orientation": "Seitenlayout",
+          "periods": "Lagerabschnitt(e)"
         },
         "programConfig": {
           "dayOverview": "Tagesübersicht"
@@ -366,13 +368,13 @@
         "add": "Inhalt hinzufügen",
         "config": {
           "Activity": "Einzelne Aktivität",
+          "ActivityList": "Aktivitätenliste (Kurse)",
           "Cover": "Titelseite",
           "Picasso": "Grobprogramm",
           "Program": "Detailprogramm",
           "SafetyConsiderations": "Sicherheitsüberlegungen",
           "Story": "Geschichte",
-          "Toc": "Inhaltsverzeichnis",
-          "ActivityList": "Aktivitätenliste (Kurse)"
+          "Toc": "Inhaltsverzeichnis"
         }
       },
       "printNuxt": {
@@ -650,6 +652,11 @@
         },
         "title": "Admin"
       },
+      "campProgram": {
+        "reminderLockedCreate": "Ziehen zum Erstellen ist nur im entsperrten Modus möglich.",
+        "reminderLockedMove": "Ziehen zum Verschieben ist nur im entsperrten Modus möglich.",
+        "title": "Grobprogramm"
+      },
       "category": {
         "category": {
           "copyCategory": "Kategorie kopieren",
@@ -660,11 +667,6 @@
         "sideBarCategory": {
           "title": "Kategorien"
         }
-      },
-      "campProgram": {
-        "reminderLockedCreate": "Ziehen zum Erstellen ist nur im entsperrten Modus möglich.",
-        "reminderLockedMove": "Ziehen zum Verschieben ist nur im entsperrten Modus möglich.",
-        "title": "Grobprogramm"
       },
       "checklistOverview": {
         "checklistLists": {
@@ -714,8 +716,8 @@
         "desktop": {
           "navTopbar": {
             "admin": "Admin",
-            "checklist": "Checkliste",
             "campIsLoading": "Lager wird geladen",
+            "checklist": "Checkliste",
             "material": "Material",
             "print": "Drucken",
             "program": "Programm",
