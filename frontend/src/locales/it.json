@@ -21,7 +21,7 @@
         }
       },
       "copyActivityInfoDialog": {
-        "allow": ""
+        "allow": "Consenti ora"
       },
       "menuCardlessContentNode": {
         "deletingDisabled": "Deve essere vuoto per essere eliminato"
