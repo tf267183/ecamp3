@@ -131,8 +131,8 @@
         "title": "Materialliste erstellen"
       },
       "dialogMaterialListEdit": {
-        "title": "Materialliste bearbeiten",
-        "deleteError": "Materialliste konnte nicht gelöscht werden. Überprüfe vor dem Löschen, dass die Liste leer ist."
+        "deleteError": "Materialliste konnte nicht gelöscht werden. Überprüfe vor dem Löschen, dass die Liste leer ist.",
+        "title": "Materialliste bearbeiten"
       },
       "dialogPeriodCreate": {
         "title": "Lagerabschnitt erstellen"
@@ -198,6 +198,10 @@
       "checklistCreate": {
         "title": "Checkliste erstellen"
       },
+      "checklistDetail": {
+        "deleteError": "Checkliste konnte nicht gelöscht werden. Überprüfe vor dem Löschen, dass die Checkliste nicht mehr in Aktivitäten verwendet wird.",
+        "deleteWarning": "Möchtest du diese Checkliste wirklich löschen? Der komplette Inhalt dieser Checkliste wird gelöscht."
+      },
       "checklistItemCreate": {
         "add": "Checklisteneintrag erstellen",
         "title": "Checklisteneintrag hinzufügen"
@@ -205,10 +209,6 @@
       "checklistItemEdit": {
         "delete": "Möchtest du diesen Eintrag wirklich löschen?",
         "title": "Checklisteneintrag bearbeiten"
-      },
-      "checklistDetail": {
-        "deleteWarning": "Möchtest du diese Checkliste wirklich löschen? Der komplette Inhalt dieser Checkliste wird gelöscht.",
-        "deleteError": "Checkliste konnte nicht gelöscht werden. Überprüfe vor dem Löschen, dass die Checkliste nicht mehr in Aktivitäten verwendet wird."
       },
       "sortableChecklist": {
         "add": "Zu \"{parent}\" hinzufügen"
@@ -307,6 +307,7 @@
     },
     "navigation": {
       "userMeta": {
+        "admin": "Admin",
         "invitations": "Einladungen",
         "logOut": "Ausloggen",
         "myCamps": "Meine Lager",
@@ -367,13 +368,13 @@
         "add": "Inhalt hinzufügen",
         "config": {
           "Activity": "Einzelne Aktivität",
+          "ActivityList": "Aktivitätsübersicht (Kurse)",
           "Cover": "Titelseite",
           "Picasso": "Grobprogramm",
           "Program": "Detailprogramm",
           "SafetyConsiderations": "Sicherheits­überlegungen",
           "Story": "Roter Faden",
-          "Toc": "Inhaltsverzeichnis",
-          "ActivityList": "Aktivitätsübersicht (Kurse)"
+          "Toc": "Inhaltsverzeichnis"
         }
       },
       "printNuxt": {
@@ -651,6 +652,11 @@
         },
         "title": "Admin"
       },
+      "campProgram": {
+        "reminderLockedCreate": "Ziehen zum Erstellen ist nur im entsperrten Modus möglich.",
+        "reminderLockedMove": "Ziehen zum Verschieben ist nur im entsperrten Modus möglich.",
+        "title": "Grobprogramm"
+      },
       "category": {
         "category": {
           "copyCategory": "Kategorie kopieren",
@@ -661,11 +667,6 @@
         "sideBarCategory": {
           "title": "Kategorien"
         }
-      },
-      "campProgram": {
-        "reminderLockedCreate": "Ziehen zum Erstellen ist nur im entsperrten Modus möglich.",
-        "reminderLockedMove": "Ziehen zum Verschieben ist nur im entsperrten Modus möglich.",
-        "title": "Grobprogramm"
       },
       "checklistOverview": {
         "checklistLists": {

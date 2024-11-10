@@ -120,8 +120,8 @@
         "title": "Créer une liste de matériel"
       },
       "dialogMaterialListEdit": {
-        "title": "Modifier la liste de matériel",
-        "deleteError": "Impossible de supprimer la liste de matériel. Vérifie que la liste soit vide avant de la supprimer."
+        "deleteError": "Impossible de supprimer la liste de matériel. Vérifie que la liste soit vide avant de la supprimer.",
+        "title": "Modifier la liste de matériel"
       },
       "dialogPeriodCreate": {
         "title": "Créer une période"
@@ -354,7 +354,7 @@
         "clipboard": "Presse-papier",
         "copyActivity": "Copier une activité",
         "copyActivityContent": "Copier le contenu depuis une activité",
-        "copyPastActivity": "Copier et coller une activité",
+        "copyPasteActivity": "Copier et coller une activité",
         "copySourceInfo": "Vous pouvez coller ici l'URL d'une activité pour copier son contenu.",
         "pasteActivity": "coller l'activité"
       },
@@ -397,6 +397,11 @@
     "prompt": {
       "promptEntityDelete": {
         "title": "Confirmation de suppression"
+      }
+    },
+    "story": {
+      "storyDay": {
+        "noStory": "Aucun file rouge trouvé ce jour-là..."
       }
     },
     "toast": {
@@ -480,11 +485,6 @@
     "serverError": {
       "409": "Oooops... Cette action a provoqué une erreur côté serveur.",
       "short": "erreur de serveur"
-    },
-    "story": {
-      "storyDay": {
-        "noStory": "Aucun file rouge trouvé ce jour-là..."
-      }
     },
     "toast": {
       "copied": "{source} copié"
@@ -596,6 +596,11 @@
         },
         "title": "Admin"
       },
+      "campProgram": {
+        "reminderLockedCreate": "Glisser pour créer n'est possible qu'en mode déverrouillé.",
+        "reminderLockedMove": "Glisser pour déplacer n'est possible qu'en mode déverrouillé.",
+        "title": "Programme général"
+      },
       "category": {
         "category": {
           "deleteCategory": "Supprimer l'activité",
@@ -605,11 +610,6 @@
         "sideBarCategory": {
           "title": "Catégories"
         }
-      },
-      "campProgram": {
-        "reminderLockedCreate": "Glisser pour créer n'est possible qu'en mode déverrouillé.",
-        "reminderLockedMove": "Glisser pour déplacer n'est possible qu'en mode déverrouillé.",
-        "title": "Programme général"
       },
       "dashboard": {
         "activities": "Activités",

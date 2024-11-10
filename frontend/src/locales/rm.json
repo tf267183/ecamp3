@@ -10,11 +10,11 @@
         },
         "storyboard": {
           "controls": "Acziuns",
-          "reorder": "Spustar"
-        },
-        "storyboardDialogRemoveSection": {
-          "deleteWarning": "Vuls ti propi stizzar questa part?",
-          "title": "Propi stizzar?"
+          "reorder": "Spustar",
+          "storyboardDialogRemoveSection": {
+            "deleteWarning": "Vuls ti propi stizzar questa part?",
+            "title": "Propi stizzar?"
+          }
         }
       },
       "menuCardlessContentNode": {
@@ -105,8 +105,8 @@
         "title": "Crear ina glista da material"
       },
       "dialogMaterialListEdit": {
-        "title": "Modifitgar la glista da material",
-        "deleteError": "Impussibel da stizzar la glista da material. Verifitgescha che la glista è vida avant che stizzar."
+        "deleteError": "Impussibel da stizzar la glista da material. Verifitgescha che la glista è vida avant che stizzar.",
+        "title": "Modifitgar la glista da material"
       },
       "dialogPeriodCreate": {
         "title": "Craer ina part dal champ"
@@ -446,7 +446,6 @@
         "accountless": "N'has ti anc nagin conto?",
         "email": "E-mail",
         "infoText": {
-          "beta": "Quai è la versiun beta dad eCamp v3. Questa versiun po servir per planisaziuns da champs reals che na fan dentant betg prescha. Il dumber limità da persunas ch'utiliseschan la versiun beta sto quintar cun interrupziuns pervia da lavurs da mantegniment.",
           "dev": "Quai è la versiun per sviluppaders dad eCamp v3.{br}IMPURTANT: Mo adattà per il diever da sviluppaders. Tut las datas èn publicas e vegnan stizzadas regularmain!{br}Annunzia: test@example.com / test"
         },
         "loginCallback": {
@@ -505,6 +504,9 @@
         "activity": {
           "title": "Parameters dad activitad"
         },
+        "adminMaterialLists": {
+          "title": "Glistas da material"
+        },
         "collaborators": {
           "email": "Adressa dad e-mail",
           "inactiveCollaborators": "Inactiv",
@@ -514,9 +516,6 @@
         },
         "info": {
           "title": "Infus dal champ"
-        },
-        "materialLists": {
-          "title": "Glistas da material"
         },
         "print": {
           "title": "Stampar il champ"
@@ -531,6 +530,11 @@
         },
         "title": "Admin"
       },
+      "campProgram": {
+        "reminderLockedCreate": "Trair per crear è mo pussaivel en il modus debloccà.",
+        "reminderLockedMove": "Trair per spustar è mo pussaivel en il modus debloccà.",
+        "title": "Program general"
+      },
       "category": {
         "category": {
           "deleteCategory": "Stizzar la categoria",
@@ -540,11 +544,6 @@
         "sideBarCategory": {
           "title": "Categorias"
         }
-      },
-      "campProgram": {
-        "reminderLockedCreate": "Trair per crear è mo pussaivel en il modus debloccà.",
-        "reminderLockedMove": "Trair per spustar è mo pussaivel en il modus debloccà.",
-        "title": "Program general"
       },
       "dashboard": {
         "activities": "Activitads",
@@ -617,12 +616,6 @@
       }
     },
     "campCreate": {
-      "couponKeyHint": "Per la beta betg publica dovri in cupon (code d'access). Sin ecamp3.ch/closed-beta vegns ti a savair co ti retschaivas in tal.",
-      "create": "Crear il champ",
-      "period": {
-        "add": "Agiuntar ina ulteriura part dal champ",
-        "remove": "Allontanar questa part dal champ"
-      },
       "title": "Crear in champ"
     },
     "camps": {

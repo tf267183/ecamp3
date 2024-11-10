@@ -129,7 +129,9 @@
         "role": "Ruolo",
         "status": "Stato"
       },
-      "inactive": "non attivo"
+      "status": {
+        "inactive": "non attivo"
+      }
     },
     "category": {
       "fields": {
