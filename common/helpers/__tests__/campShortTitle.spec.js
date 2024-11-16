@@ -37,6 +37,15 @@ describe('campShortTitle', () => {
     [{ shortTitle: undefined, title: null }, ''],
     [{ shortTitle: '0', title: 'Sola24' }, '0'],
     [{ shortTitle: '', title: 'Sola24' }, 'SoLa24'],
+
+    //error cases
+    [{ shortTitle: 0, title: 'Sola24' }, '0'],
+    [{ shortTitle: false, title: 'Sola24' }, 'false'],
+    [{ shortTitle: true, title: 'Sola24' }, 'true'],
+    [{ shortTitle: {}, title: 'Sola24' }, '[object Object]'],
+    [{ shortTitle: Symbol('foo'), title: 'Sola24' }, 'SoLa24'],
+    [{ shortTitle: [], title: 'Sola24' }, ''],
+    [{ shortTitle: /test/, title: 'Sola24' }, '/test/'],
     [null, ''],
     [undefined, ''],
   ])('maps "%s" to "%s"', (input, expected) => {

@@ -48,8 +48,8 @@ const ADDITIONAL_SHORTNERS = [
 ]
 
 function campShortTitle(camp) {
-  if (camp?.shortTitle != null && camp.shortTitle !== '') {
-    return camp.shortTitle.substring(0, 16)
+  if (camp?.shortTitle != null && camp.shortTitle !== '' && typeof camp.shortTitle !== 'symbol') {
+    return `${camp.shortTitle}`.substring(0, 16)
   }
 
   let title = camp?.title ?? ''
