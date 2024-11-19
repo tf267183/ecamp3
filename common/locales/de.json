@@ -165,18 +165,18 @@
       },
       "name": "Block-Kategorien",
       "numberingStyles": {
+        "-": "keine Nummerierung",
         "1": "1, 2, 3 - Zahlen",
         "A": "A, B, C - grosse Buchstaben",
         "I": "I, II, III - grosse römische Zahlen",
         "a": "a, b, c - kleine Buchstaben",
-        "i": "i, ii, iii - kleine römische Zahlen",
-        "-": "keine Nummerierung"
+        "i": "i, ii, iii - kleine römische Zahlen"
       }
     },
     "checklist": {
       "fields": {
-        "name": "Name",
-        "copyChecklistSource": "Vorlage"
+        "copyChecklistSource": "Vorlage",
+        "name": "Name"
       },
       "name": "Checkliste | Checklisten"
     },
@@ -238,9 +238,9 @@
         "endDate": "Enddatum",
         "endDatetime": "Endzeit",
         "nr": "Nr.",
-        "time": "Zeitpunkt",
         "startDate": "Startdatum",
-        "startDatetime": "Startzeit"
+        "startDatetime": "Startzeit",
+        "time": "Zeitpunkt"
       },
       "name": "Zeitplaneintrag"
     }
