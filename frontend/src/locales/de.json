@@ -188,7 +188,7 @@
       },
       "copyCategoryInfoDialog": {
         "allow": "Jetzt erlauben",
-        "denied": "Du hast das Lesen von der Zwischenablage untersagt. Du kannst daher kopierte Kategorien nicht einfügen.",
+        "denied": "Du hast den Zugriff auf die Zwischenablage verweigert. Kopierte Kategorien können daher nicht eingefügt werden.",
         "description": "Damit du eine kopierte Kategorie einfügen kannst, musst du eCamp erlauben deine Zwischenablage zu lesen.",
         "granted": "Du kannst nun kopierte Kategorien einfügen.",
         "title": "Kategorie kopieren & einfügen"
@@ -203,12 +203,12 @@
         "deleteWarning": "Möchtest du diese Checkliste wirklich löschen? Der komplette Inhalt dieser Checkliste wird gelöscht."
       },
       "checklistItemCreate": {
-        "add": "Checklisteneintrag erstellen",
-        "title": "Checklisteneintrag hinzufügen"
+        "add": "Checklisten-Eintrag erstellen",
+        "title": "Checklisten-Eintrag hinzufügen"
       },
       "checklistItemEdit": {
         "delete": "Möchtest du diesen Eintrag wirklich löschen?",
-        "title": "Checklisteneintrag bearbeiten"
+        "title": "Checklisten-Eintrag bearbeiten"
       },
       "sortableChecklist": {
         "add": "Zu \"{parent}\" hinzufügen"
@@ -368,12 +368,12 @@
         "add": "Inhalt hinzufügen",
         "config": {
           "Activity": "Einzelne Aktivität",
-          "ActivityList": "Aktivitätsübersicht (Kurse)",
+          "ActivityList": "Aktivitätenliste (Kurse)",
           "Cover": "Titelseite",
           "Picasso": "Grobprogramm",
           "Program": "Detailprogramm",
           "SafetyConsiderations": "Sicherheits­überlegungen",
-          "Story": "Roter Faden",
+          "Story": "Geschichte",
           "Toc": "Inhaltsverzeichnis"
         }
       },
@@ -670,7 +670,7 @@
       },
       "checklistOverview": {
         "checklistLists": {
-          "title": "Checklist-Übersicht"
+          "title": "Checklisten-Übersicht"
         }
       },
       "dashboard": {
@@ -717,7 +717,7 @@
           "navTopbar": {
             "admin": "Admin",
             "campIsLoading": "Lager wird geladen",
-            "checklist": "Checklist",
+            "checklist": "Checkliste",
             "material": "Material",
             "print": "Drucken",
             "program": "Programm",
@@ -736,7 +736,7 @@
             "itemActivity": "Aktivitäten",
             "itemActivitySubtitle": "Kategorie, Vorlagen & Status",
             "itemCamps": "Meine Lager",
-            "itemChecklists": "Checklist Übersicht",
+            "itemChecklists": "Checklisten-Übersicht",
             "itemClose": "Menü schliessen",
             "itemCollaborators": "Team",
             "itemInfos": "Lagerinfos",
