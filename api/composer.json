@@ -113,7 +113,7 @@
         "cs-fix": "php-cs-fixer fix",
         "test": [
             "Composer\\Config::disableProcessTimeout",
-            "bin/phpunit -d memory_limit=-1"
+            "bin/phpunit -d memory_limit=-1 -c phpunit.xml.dist"
         ],
         "paratest": [
             "Composer\\Config::disableProcessTimeout",
