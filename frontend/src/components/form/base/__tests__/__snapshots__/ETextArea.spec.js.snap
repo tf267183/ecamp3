@@ -110,8 +110,7 @@ exports[`An ETextArea > looks like a textarea > withtext 1`] = `
                                    id>
                                    <!---->
                                    <div class="editor__content">
-                                        <div aria-label="Rich-Text Editor"
-                                             class="tiptap ProseMirror"
+                                        <div class="tiptap ProseMirror"
                                              contenteditable="true"
                                              role="textbox"
                                              tabindex="0"
