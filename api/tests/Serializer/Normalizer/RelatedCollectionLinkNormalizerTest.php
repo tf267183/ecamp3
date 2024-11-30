@@ -2,7 +2,7 @@
 
 namespace App\Tests\Serializer\Normalizer;
 
-use ApiPlatform\Api\FilterInterface;
+use ApiPlatform\Doctrine\Common\Filter\SearchFilterInterface;
 use ApiPlatform\Doctrine\Orm\Filter\DateFilter;
 use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Metadata\ApiResource;
@@ -48,7 +48,7 @@ class RelatedCollectionLinkNormalizerTest extends TestCase {
     private MockObject|PropertyAccessorInterface $propertyAccessor;
     private EntityManagerInterface|MockObject $entityManager;
 
-    private ?FilterInterface $filterInstance;
+    private null|DateFilter|SearchFilterInterface $filterInstance;
 
     protected function setUp(): void {
         $this->filterLocatorMock = $this->createMock(ServiceLocator::class);

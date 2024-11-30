@@ -40,13 +40,15 @@ final class CircularReferenceDetectingHalItemNormalizer extends AbstractItemNorm
 
     /**
      * {@inheritdoc}
+     *
+     * @psalm-suppress ParamNameMismatch
      */
-    public function normalize($object, $format = null, array $context = []): null|array|\ArrayObject|bool|float|int|string {
-        if ($this->isHalCircularReference($object, $context)) {
-            return $this->handleHalCircularReference($object, $format, $context);
+    public function normalize($data, $format = null, array $context = []): null|array|\ArrayObject|bool|float|int|string {
+        if ($this->isHalCircularReference($data, $context)) {
+            return $this->handleHalCircularReference($data, $format, $context);
         }
 
-        return $this->decorated->normalize($object, $format, $context);
+        return $this->decorated->normalize($data, $format, $context);
     }
 
     public function setSerializer(SerializerInterface $serializer): void {

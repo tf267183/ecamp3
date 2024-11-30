@@ -25,22 +25,22 @@ class ContentTypeNormalizer implements NormalizerInterface, SerializerAwareInter
         return $this->decorated->supportsNormalization($data, $format, $context);
     }
 
-    public function normalize($object, $format = null, array $context = []): null|array|\ArrayObject|bool|float|int|string {
-        $data = $this->decorated->normalize($object, $format, $context);
+    public function normalize($data, $format = null, array $context = []): null|array|\ArrayObject|bool|float|int|string {
+        $normalized_data = $this->decorated->normalize($data, $format, $context);
 
-        if ($object instanceof ContentType && isset($object->entityClass)) {
+        if ($data instanceof ContentType && isset($data->entityClass)) {
             // get uri for the respective ContentNode entity and add ContentType as query parameter
-            [$uriTemplate, $templated] = $this->uriTemplateFactory->createFromResourceClass($object->entityClass);
-            $uri = $this->uriTemplate->expand($uriTemplate, ['contentType' => $this->iriConverter->getIriFromResource($object)]);
+            [$uriTemplate, $templated] = $this->uriTemplateFactory->createFromResourceClass($data->entityClass);
+            $uri = $this->uriTemplate->expand($uriTemplate, ['contentType' => $this->iriConverter->getIriFromResource($data)]);
 
             // add uri as HAL link
-            $data['_links']['contentNodes']['href'] = $uri;
+            $normalized_data['_links']['contentNodes']['href'] = $uri;
 
             // unset the property itself (property definition was only needed to ensure proper API documentation)
-            unset($data['contentNodes']);
+            unset($normalized_data['contentNodes']);
         }
 
-        return $data;
+        return $normalized_data;
     }
 
     public function getSupportedTypes(?string $format): array {

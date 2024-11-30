@@ -20,20 +20,20 @@ class CollectionItemsNormalizer implements NormalizerInterface, NormalizerAwareI
         return $this->decorated->supportsNormalization($data, $format, $context);
     }
 
-    public function normalize($object, $format = null, array $context = []): null|array|\ArrayObject|bool|float|int|string {
-        $data = $this->decorated->normalize($object, $format, $context);
+    public function normalize($data, $format = null, array $context = []): null|array|\ArrayObject|bool|float|int|string {
+        $normalized_data = $this->decorated->normalize($data, $format, $context);
 
-        if (isset($data['_embedded'], $data['_embedded']['item'])) {
-            $data['_embedded']['items'] = $data['_embedded']['item'];
-            unset($data['_embedded']['item']);
+        if (isset($normalized_data['_embedded'], $normalized_data['_embedded']['item'])) {
+            $normalized_data['_embedded']['items'] = $normalized_data['_embedded']['item'];
+            unset($normalized_data['_embedded']['item']);
 
-            $data['_links']['items'] = $data['_links']['item'];
-            unset($data['_links']['item']);
-        } elseif (isset($data['totalItems']) && 0 === $data['totalItems']) {
-            $data['_embedded']['items'] = [];
+            $normalized_data['_links']['items'] = $normalized_data['_links']['item'];
+            unset($normalized_data['_links']['item']);
+        } elseif (isset($normalized_data['totalItems']) && 0 === $normalized_data['totalItems']) {
+            $normalized_data['_embedded']['items'] = [];
         }
 
-        return $data;
+        return $normalized_data;
     }
 
     public function getSupportedTypes(?string $format): array {
