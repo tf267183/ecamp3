@@ -1,4 +1,5 @@
 <?php
+
 /**
  * mostly copied from https://github.com/doctrine/dbal/blob/3.2.x/tests/Types/DateTest.php.
  */
