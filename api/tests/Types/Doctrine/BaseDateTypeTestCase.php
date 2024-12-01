@@ -1,4 +1,5 @@
 <?php
+
 /**
  * copied 1:1 from https://github.com/doctrine/dbal/blob/3.2.x/tests/Types/BaseDateTypeTestCase.php.
  */
