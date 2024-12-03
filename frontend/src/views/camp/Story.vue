@@ -64,6 +64,7 @@ export default {
           {
             type: 'Story',
             options: {
+              contentType: 'Storycontext',
               periods: [this.period._meta.self],
             },
           },
