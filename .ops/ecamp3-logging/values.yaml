@@ -1,5 +1,8 @@
 fluent-operator:
   containerRuntime: containerd
+  operator: 
+    annotations: 
+      trigger-recreate: ${RANDOM_STRING}
   fluentbit:
     enable: true
     input:
@@ -19,6 +22,9 @@ fluent-operator:
     watchedNamespaces:
       - default
       - ingress-nginx
+    envVars: 
+      - name: TRIGGER_FLUENTD_RECREATE
+        value: ${RANDOM_STRING}
     enable: true
 
 fluentd:
@@ -38,9 +44,9 @@ elasticsearch:
   elasticNode:
     resources:
       requests:
-        memory: 1000Mi
+        memory: ${ELASTIC_NODE_REQUESTS_MEMORY}
       limits:
-        memory: 1000Mi
+        memory: ${ELASTIC_NODE_LIMITS_MEMORY}
   persistence:
     storageClassName: do-block-storage
     resources:
