@@ -23,8 +23,8 @@ class UriTemplateNormalizer implements NormalizerInterface {
         return $this->decorated->supportsNormalization($data, $format, $context);
     }
 
-    public function normalize($object, $format = null, array $context = []): null|array|\ArrayObject|bool|float|int|string {
-        $result = $this->decorated->normalize($object, $format, $context);
+    public function normalize($data, $format = null, array $context = []): null|array|\ArrayObject|bool|float|int|string {
+        $result = $this->decorated->normalize($data, $format, $context);
 
         foreach ($result['_links'] as $rel => $link) {
             if ('self' === $rel) {

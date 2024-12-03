@@ -98,28 +98,28 @@ class RelatedCollectionLinkNormalizer implements NormalizerInterface, Serializer
         return $this->decorated->supportsNormalization($data, $format, $context);
     }
 
-    public function normalize($object, $format = null, array $context = []): null|array|\ArrayObject|bool|float|int|string {
-        $data = $this->decorated->normalize($object, $format, $context);
+    public function normalize($data, $format = null, array $context = []): null|array|\ArrayObject|bool|float|int|string {
+        $normalized_data = $this->decorated->normalize($data, $format, $context);
 
-        if (!isset($data['_links'])) {
-            return $data;
+        if (!isset($normalized_data['_links'])) {
+            return $normalized_data;
         }
 
-        foreach ($data['_links'] as $rel => $link) {
+        foreach ($normalized_data['_links'] as $rel => $link) {
             // Only consider array rels (i.e. OneToMany and ManyToMany)
             if (isset($link['href'])) {
                 continue;
             }
 
             try {
-                $data['_links'][$rel] = ['href' => $this->getRelatedCollectionHref($object, $rel, $context)];
+                $normalized_data['_links'][$rel] = ['href' => $this->getRelatedCollectionHref($data, $rel, $context)];
             } catch (UnsupportedRelationException $e) {
                 // The relation is not supported, or there is no matching filter defined on the related entity
                 continue;
             }
         }
 
-        return $data;
+        return $normalized_data;
     }
 
     public function getSupportedTypes(?string $format): array {

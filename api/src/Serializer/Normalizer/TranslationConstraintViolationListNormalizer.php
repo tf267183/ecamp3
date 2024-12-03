@@ -24,15 +24,15 @@ class TranslationConstraintViolationListNormalizer implements NormalizerInterfac
         return $this->getNormalizerCollection()->exists(fn ($_, $elem) => $elem->supportsNormalization($data, $format, $context));
     }
 
-    public function normalize(mixed $object, ?string $format = null, array $context = []): null|array|\ArrayObject|bool|float|int|string {
-        $normalizer = $this->getNormalizerCollection()->filter(fn ($elem) => $elem->supportsNormalization($object, $format, $context))->first();
+    public function normalize(mixed $data, ?string $format = null, array $context = []): null|array|\ArrayObject|bool|float|int|string {
+        $normalizer = $this->getNormalizerCollection()->filter(fn ($elem) => $elem->supportsNormalization($data, $format, $context))->first();
         if (false === $normalizer) {
             throw new \RuntimeException("Did not find a normalizer to normalize response to format {$format}");
         }
-        $result = $normalizer->normalize($object, $format, $context);
+        $result = $normalizer->normalize($data, $format, $context);
 
-        /** @var ConstraintViolationList $object */
-        foreach ($object as $violation) {
+        /** @var ConstraintViolationList $data */
+        foreach ($data as $violation) {
             foreach ($result['violations'] as &$resultItem) {
                 $code = $resultItem['code'] ?? null;
                 $propertyPath = $resultItem['propertyPath'];
