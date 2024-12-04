@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4e0bc63b92769f6be07f895badda7e95",
+    "content-hash": "ef37f85f0b6e790db5724e7c3756e8c9",
     "packages": [
         {
             "name": "api-platform/core",
@@ -10066,16 +10066,16 @@
         },
         {
             "name": "webonyx/graphql-php",
-            "version": "v15.18.1",
+            "version": "v15.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webonyx/graphql-php.git",
-                "reference": "a167afab66d8aa74b7f552759c0bbd906afb4134"
+                "reference": "5203bf29c8be0280e8d0925538a310202bc10f29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/a167afab66d8aa74b7f552759c0bbd906afb4134",
-                "reference": "a167afab66d8aa74b7f552759c0bbd906afb4134",
+                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/5203bf29c8be0280e8d0925538a310202bc10f29",
+                "reference": "5203bf29c8be0280e8d0925538a310202bc10f29",
                 "shasum": ""
             },
             "require": {
@@ -10088,12 +10088,12 @@
                 "amphp/http-server": "^2.1",
                 "dms/phpunit-arraysubset-asserts": "dev-master",
                 "ergebnis/composer-normalize": "^2.28",
-                "friendsofphp/php-cs-fixer": "3.64.0",
+                "friendsofphp/php-cs-fixer": "3.65.0",
                 "mll-lab/php-cs-fixer-config": "^5.9.2",
                 "nyholm/psr7": "^1.5",
                 "phpbench/phpbench": "^1.2",
                 "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan": "1.12.10",
+                "phpstan/phpstan": "1.12.12",
                 "phpstan/phpstan-phpunit": "1.4.1",
                 "phpstan/phpstan-strict-rules": "1.6.1",
                 "phpunit/phpunit": "^9.5 || ^10.5.21 || ^11",
@@ -10128,7 +10128,7 @@
             ],
             "support": {
                 "issues": "https://github.com/webonyx/graphql-php/issues",
-                "source": "https://github.com/webonyx/graphql-php/tree/v15.18.1"
+                "source": "https://github.com/webonyx/graphql-php/tree/v15.19.0"
             },
             "funding": [
                 {
@@ -10136,7 +10136,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-11-13T16:21:54+00:00"
+            "time": "2024-12-04T19:14:22+00:00"
         },
         {
             "name": "willdurand/negotiation",
