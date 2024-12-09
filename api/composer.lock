@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "99ebcde5304fecea57b3910fcec773af",
+    "content-hash": "51e75eff51c0bf7357dca8834aa0d9aa",
     "packages": [
         {
             "name": "api-platform/core",
@@ -13909,16 +13909,16 @@
         },
         {
             "name": "spatie/phpunit-snapshot-assertions",
-            "version": "5.1.7",
+            "version": "5.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/phpunit-snapshot-assertions.git",
-                "reference": "5c7ae9d555c3b46bddd35f4e4bab9a6181aa1446"
+                "reference": "61e2eb567713c89987895b8f514a7a4d3bff89c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/phpunit-snapshot-assertions/zipball/5c7ae9d555c3b46bddd35f4e4bab9a6181aa1446",
-                "reference": "5c7ae9d555c3b46bddd35f4e4bab9a6181aa1446",
+                "url": "https://api.github.com/repos/spatie/phpunit-snapshot-assertions/zipball/61e2eb567713c89987895b8f514a7a4d3bff89c9",
+                "reference": "61e2eb567713c89987895b8f514a7a4d3bff89c9",
                 "shasum": ""
             },
             "require": {
@@ -13974,7 +13974,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/phpunit-snapshot-assertions/issues",
-                "source": "https://github.com/spatie/phpunit-snapshot-assertions/tree/5.1.7"
+                "source": "https://github.com/spatie/phpunit-snapshot-assertions/tree/5.1.6"
             },
             "funding": [
                 {
@@ -13982,7 +13982,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-12-09T15:47:41+00:00"
+            "time": "2024-05-03T07:53:03+00:00"
         },
         {
             "name": "symfony/browser-kit",
