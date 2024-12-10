@@ -1,6 +1,6 @@
 services:
   remove-old-indexes:
-    image: node:22.11.0
+    image: node:22.12.0
     volumes:
       - ./src:/src
     command:
