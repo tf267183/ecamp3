@@ -54,7 +54,7 @@ elasticsearch:
         storage: 10Gi
   removeOldIndexes:
     maxIndexAge: 15
-    image: node:22.11.0
+    image: node:22.12.0
 
 kibana:
   name: kibana
