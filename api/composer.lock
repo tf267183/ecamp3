@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26599581f6be58c99a77a5615920df04",
+    "content-hash": "dc3df5c4bc1db4967c0ee9f5195e56c8",
     "packages": [
         {
             "name": "api-platform/core",
@@ -13908,16 +13908,16 @@
         },
         {
             "name": "spatie/phpunit-snapshot-assertions",
-            "version": "5.1.6",
+            "version": "5.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/phpunit-snapshot-assertions.git",
-                "reference": "61e2eb567713c89987895b8f514a7a4d3bff89c9"
+                "reference": "5c7ae9d555c3b46bddd35f4e4bab9a6181aa1446"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/phpunit-snapshot-assertions/zipball/61e2eb567713c89987895b8f514a7a4d3bff89c9",
-                "reference": "61e2eb567713c89987895b8f514a7a4d3bff89c9",
+                "url": "https://api.github.com/repos/spatie/phpunit-snapshot-assertions/zipball/5c7ae9d555c3b46bddd35f4e4bab9a6181aa1446",
+                "reference": "5c7ae9d555c3b46bddd35f4e4bab9a6181aa1446",
                 "shasum": ""
             },
             "require": {
@@ -13973,7 +13973,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/phpunit-snapshot-assertions/issues",
-                "source": "https://github.com/spatie/phpunit-snapshot-assertions/tree/5.1.6"
+                "source": "https://github.com/spatie/phpunit-snapshot-assertions/tree/5.1.7"
             },
             "funding": [
                 {
@@ -13981,7 +13981,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-05-03T07:53:03+00:00"
+            "time": "2024-12-09T15:47:41+00:00"
         },
         {
             "name": "staabm/side-effects-detector",
