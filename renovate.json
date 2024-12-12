@@ -12,99 +12,56 @@
   "rebaseWhen": "conflicted",
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": [
-      "on tuesday and wednesday"
-    ]
+    "schedule": ["on tuesday and wednesday"]
   },
   "vulnerabilityAlerts": {
     "automerge": true
   },
-  "labels": [
-    "renovate"
-  ],
+  "labels": ["renovate"],
   "packageRules": [
     {
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "lockFileMaintenance"
-      ],
+      "matchUpdateTypes": ["minor", "patch", "pin", "lockFileMaintenance"],
       "automerge": true
     },
     {
-      "extends": [
-        "monorepo:vue"
-      ],
-      "matchUpdateTypes": [
-        "major"
-      ],
-      "matchFileNames": [
-        "print/package.json",
-        "pdf/package.json"
-      ],
+      "extends": ["monorepo:vue"],
+      "matchUpdateTypes": ["major"],
+      "matchFileNames": ["print/package.json", "pdf/package.json"],
       "dependencyDashboardApproval": true,
       "groupName": "vue-major-print-pdf"
     },
     {
-      "extends": [
-        "monorepo:vue"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
-      "matchFileNames": [
-        "print/package.json",
-        "pdf/package.json"
-      ],
+      "extends": ["monorepo:vue"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchFileNames": ["print/package.json", "pdf/package.json"],
       "dependencyDashboardApproval": false,
       "groupName": "vue-minor-print-pdf"
     },
     {
-      "extends": [
-        "monorepo:vue"
-      ],
-      "matchUpdateTypes": [
-        "major",
-        "minor",
-        "patch"
-      ],
-      "matchFileNames": [
-        "frontend/package.json"
-      ],
+      "extends": ["monorepo:vue"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "matchFileNames": ["frontend/package.json"],
       "dependencyDashboardApproval": true,
       "groupName": "vue-frontend"
     },
     {
-      "matchDepNames": [
-        "@vue/test-utils"
-      ],
-      "matchFileNames": [
-        "frontend/package.json"
-      ],
+      "matchDepNames": ["@vue/test-utils"],
+      "matchFileNames": ["frontend/package.json"],
       "dependencyDashboardApproval": true,
       "groupName": "vue-test-utils-frontend"
     },
     {
-      "matchDepNames": [
-        "sass"
-      ],
+      "matchDepNames": ["sass"],
       "dependencyDashboardApproval": true
     },
     {
-      "matchDepNames": [
-        "php",
-        "dunglas/frankenphp"
-      ],
+      "matchDepNames": ["php", "dunglas/frankenphp"],
       "automerge": false,
       "groupName": "php"
     },
     {
-      "matchPackagePatterns": [
-        "^@tiptap/"
-      ],
-      "groupName": "tiptap"
+      "groupName": "tiptap",
+      "matchPackageNames": ["/^@tiptap//"]
     },
     {
       "matchDepNames": [
@@ -118,34 +75,22 @@
         "qoomon/docker-host"
       ],
       "groupName": "docker-images",
-      "schedule": [
-        "after 10pm on sunday",
-        "before 7am on monday"
-      ]
+      "schedule": ["after 10pm on sunday", "before 7am on monday"]
     },
     {
-      "matchDepNames": [
-        "browserless/chrome"
-      ],
+      "matchDepNames": ["browserless/chrome"],
       "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-(?<compatibility>\\w+)-(?<build>\\d+)\\.(\\d+)\\.(\\d+)?$"
     },
     {
-      "matchDepNames": [
-        "dunglas/frankenphp"
-      ],
+      "matchDepNames": ["dunglas/frankenphp"],
       "versioning": "regex:^(?<build>\\d+)\\.(?<revision>\\d+)-(?<compatibility>\\w+)(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?$"
     },
     {
-      "matchDepNames": [
-        "postgres"
-      ],
+      "matchDepNames": ["postgres"],
       "allowedVersions": "15-alpine"
     },
     {
-      "matchDepNames": [
-        "cypress",
-        "cypress/included"
-      ],
+      "matchDepNames": ["cypress", "cypress/included"],
       "automerge": false,
       "groupName": "cypress"
     }
@@ -153,9 +98,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "^api/phpunit.xml.dist$"
-      ],
+      "fileMatch": ["^api/phpunit.xml.dist$"],
       "matchStrings": [
         "<server name=\"SYMFONY_PHPUNIT_VERSION\" value=\"(?<currentValue>[^\"]+)\" />"
       ],
@@ -164,9 +107,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "^api/Dockerfile$"
-      ],
+      "fileMatch": ["^api/Dockerfile$"],
       "matchStrings": [
         "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s(ENV|ARG) .*?_VERSION=(?<currentValue>.*)\\s"
       ],
@@ -174,21 +115,15 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "^.helm/ecamp3/values.ya?ml$"
-      ],
+      "fileMatch": ["^.helm/ecamp3/values.ya?ml$"],
       "matchStrings": [
         "datasource=(?<datasource>.*?) depName=(?<depName>.*?)?\\s.*tag: \"(?<currentValue>.*)\"\\s"
       ]
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "^.github/workflows/.+\\.ya?ml$"
-      ],
-      "matchStrings": [
-        "php-version: '(?<currentValue>[0-9.]+)'"
-      ],
+      "fileMatch": ["^.github/workflows/.+\\.ya?ml$"],
+      "matchStrings": ["php-version: '(?<currentValue>[0-9.]+)'"],
       "depNameTemplate": "php",
       "packageNameTemplate": "php/php-src",
       "datasourceTemplate": "github-tags",
@@ -197,12 +132,8 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "^renovate.json$"
-      ],
-      "matchStrings": [
-        "\"php\": \"(?<currentValue>[^\"]+).*\".*"
-      ],
+      "fileMatch": ["^renovate.json$"],
+      "matchStrings": ["\"php\": \"(?<currentValue>[^\"]+).*\".*"],
       "depNameTemplate": "php",
       "packageNameTemplate": "php/php-src",
       "datasourceTemplate": "github-tags",
@@ -211,12 +142,8 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "^.github/workflows/.+\\.ya?ml$"
-      ],
-      "matchStrings": [
-        "tools: composer:(?<currentValue>[0-9.]+)"
-      ],
+      "fileMatch": ["^.github/workflows/.+\\.ya?ml$"],
+      "matchStrings": ["tools: composer:(?<currentValue>[0-9.]+)"],
       "depNameTemplate": "composer",
       "packageNameTemplate": "composer/composer",
       "datasourceTemplate": "github-tags",
@@ -224,12 +151,8 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "^.github/workflows/.+\\.ya?ml$"
-      ],
-      "matchStrings": [
-        "node-version: '(?<currentValue>[^']+)'.*"
-      ],
+      "fileMatch": ["^.github/workflows/.+\\.ya?ml$"],
+      "matchStrings": ["node-version: '(?<currentValue>[^']+)'.*"],
       "depNameTemplate": "node",
       "packageNameTemplate": "nodejs/node",
       "datasourceTemplate": "github-tags",
@@ -238,12 +161,8 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        ".nvmrc"
-      ],
-      "matchStrings": [
-        "(?<currentValue>[^'\n]+).*"
-      ],
+      "fileMatch": [".nvmrc"],
+      "matchStrings": ["(?<currentValue>[^'\n]+).*"],
       "depNameTemplate": "node",
       "packageNameTemplate": "nodejs/node",
       "datasourceTemplate": "github-tags",
@@ -252,12 +171,8 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "^renovate.json$"
-      ],
-      "matchStrings": [
-        "\"node\": \"(?<currentValue>[^\"]+).*\".*"
-      ],
+      "fileMatch": ["^renovate.json$"],
+      "matchStrings": ["\"node\": \"(?<currentValue>[^\"]+).*\".*"],
       "depNameTemplate": "node",
       "packageNameTemplate": "nodejs/node",
       "datasourceTemplate": "github-tags",
@@ -266,9 +181,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "^.github/workflows/.+\\.ya?ml$"
-      ],
+      "fileMatch": ["^.github/workflows/.+\\.ya?ml$"],
       "matchStrings": [
         "image:\\s+'(?<depName>.*):(?<currentValue>.*)@(?<currentDigest>.*)'\\s"
       ],
